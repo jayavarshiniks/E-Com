@@ -1,7 +1,10 @@
 
 const App = () => {
   return (
-    <div className="text-red-500">App</div>
+    <div data-theme="autumn">
+    <button className="btn btn-primary">Click me</button>
+    </div>
+    
   )
 }
 
