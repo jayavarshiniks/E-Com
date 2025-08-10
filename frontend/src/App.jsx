@@ -1,8 +1,13 @@
+import Footer from "./components/Footer"
+import Header from "./components/Header"
+import Home from "./pages/Home"
 
 const App = () => {
   return (
     <div data-theme="autumn">
-    <button className="btn btn-primary">Click me</button>
+    <Header/>
+    <Home/>
+    <Footer/>
     </div>
     
   )
