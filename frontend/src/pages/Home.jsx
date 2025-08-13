@@ -1,6 +1,15 @@
+import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 
 const Home = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(()=> {
+      fetch(import.meta.env.VITE_API_URL + '/products')
+      .then(res => res.json())
+      .then(res => setProducts)
+  },[])
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Main content */}
