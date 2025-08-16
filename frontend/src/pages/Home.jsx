@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(()=> {
-      fetch(import.meta.env.VITE_API_URL + '/products')
+      fetch(import.meta.env.VITE_API_URL + '/products?'+searchParams)
       .then(res => res.json())
       .then(res => setProducts(res.allProducts))
-  },[])
+  },[searchParams])
 
   return (
     <div className="flex flex-col min-h-screen">

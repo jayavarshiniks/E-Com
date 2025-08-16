@@ -2,7 +2,12 @@ import { ProductModel } from "../models/ProductModel.js";
 
 //get all products
 export const getAllProducts = async (req, res) => {
-  const allProducts = await ProductModel.find({});
+
+  const query = req.query.keyword?{name : { 
+    $regex: req.query.keyword,
+    $options: 'i'
+  }}: {}
+  const allProducts = await ProductModel.find(query);
 
   res.status(200).json({
     message: "All products retrived successfully",
