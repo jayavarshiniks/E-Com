@@ -7,7 +7,7 @@ const Home = () => {
   useEffect(()=> {
       fetch(import.meta.env.VITE_API_URL + '/products')
       .then(res => res.json())
-      .then(res => setProducts)
+      .then(res => setProducts(res.allProducts))
   },[])
 
   return (
@@ -24,7 +24,8 @@ const Home = () => {
 
         {/* Products Grid */}
         <section id="products" className="container mx-auto mt-6">
-        <ProductCard/>
+
+        <ProductCard products={products}/>
         </section>
       </main>
 
