@@ -13,7 +13,7 @@ const App = () => {
   return (
     <div data-theme="autumn">
       <BrowserRouter>
-      <ToastContainer theme='light'/>
+      <ToastContainer theme='light' position="top-center"/>
         <Header cartItems={cartItems}/>
         <Routes>
           <Route path="/" element=<Home /> />

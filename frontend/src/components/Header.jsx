@@ -8,7 +8,7 @@ const Header = ({cartItems}) => {
       {/* Logo */}
       <div className="flex-shrink-0 flex justify-center md:justify-start">
       <Link to= "/">
-        <img className="w-28 md:w-36" src="./images/logo.png" alt="Logo" />
+        <img className="w-12 md:w-10" src="./images/logo.png" alt="Logo" />
         </Link>
       </div>
 
